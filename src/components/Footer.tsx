@@ -11,10 +11,9 @@ export const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
       <div className="grid md:grid-cols-4 gap-16 mb-24">
         <div className="col-span-1 md:col-span-1 text-left">
           <div className="flex items-center gap-3 mb-10 cursor-pointer group" onClick={() => setPage('home')}>
-            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-blue-600/20">
-              <Code2 className="text-white w-7 h-7" />
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-[32px] overflow-hidden group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
+              <img src="/l2.png" alt="Arkanj Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
-            <span className="text-3xl font-black tracking-tighter text-white">ARKANJ</span>
           </div>
           <p className="text-lg leading-relaxed mb-10 text-slate-400 font-medium">
             Bridging the gap to an AI-driven future with precision and care. Smart automation for businesses, simple AI for everyone.
@@ -22,7 +21,7 @@ export const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
           <div className="flex gap-4">
             {[
               { icon: <Twitter className="w-5 h-5" />, url: 'https://twitter.com' },
-              { icon: <Linkedin className="w-5 h-5" />, url: 'https://linkedin.com' }
+              { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/admin-arkanj-08b18b402' }
             ].map((social, i) => (
               <motion.div 
                 key={i}
@@ -71,13 +70,13 @@ export const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors">
                 <MapPin className="w-5 h-5 text-blue-500" />
               </div>
-              <span className="group-hover:text-blue-400 transition-colors pt-1">Dhanbad, Jharkhand, India</span>
+              <span className="group-hover:text-blue-400 transition-colors pt-1">Krishna Complex, Pipratand Barwadda Dhanbad, Opposite-Koylanchal school, Pin 826010</span>
             </div>
             <div className="flex gap-4 cursor-pointer group" onClick={() => window.location.href = 'mailto:admin@arkanj.tech'}>
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors">
                 <Mail className="w-5 h-5 text-blue-500" />
               </div>
-              <span className="group-hover:text-blue-400 transition-colors pt-1">admin@arkanj.tech</span>
+              <span className="group-hover:text-blue-400 transition-colors pt-1">superadmin@arkanj.tech</span>
             </div>
           </div>
         </div>

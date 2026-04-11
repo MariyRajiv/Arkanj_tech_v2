@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Star, Zap, Target, X, TrendingUp, Heart, Cpu, Users, Globe, Clock, Award, MessageSquare, Layers, ChevronRight } from 'lucide-react';
 import { Button } from '../components/Button';
-import { BookingModal } from '../components/BookingModal';
+// import { BookingModal } from '../components/BookingModal';
+import { UnderConstructionModal } from '../components/UnderConstructionModal';
 import { Counter } from '../components/Counter';
 import { stats, partners, testimonials, industryServices, faqs } from '../constants';
 import { Page } from '../types';
@@ -13,7 +14,8 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
 
   return (
     <div className="overflow-hidden">
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      {/* <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} /> */}
+      <UnderConstructionModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
       
       {/* Hero Section */}
       <section className="relative pt-8 pb-20 md:pt-12 md:pb-32 mesh-gradient overflow-hidden">

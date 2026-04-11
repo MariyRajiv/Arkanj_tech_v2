@@ -19,13 +19,12 @@ export const Navbar = ({ currentPage, setPage }: { currentPage: Page, setPage: (
       <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? 'scale-100' : 'scale-100'}`}>
         <div className={`flex justify-between items-center px-6 py-3 rounded-[32px] transition-all duration-500 ${scrolled ? 'glass shadow-lg border-white/60' : 'bg-transparent'}`}>
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setPage('home')}>
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-blue-600/20">
-              <Code2 className="text-white w-6 h-6" />
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+              <img src="/l2.png" alt="Arkanj Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900">ARKANJ</span>
           </div>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center md:gap-6 lg:gap-10">
             {['home', 'about', 'services', 'pricing', 'contact'].map((p) => (
               <button 
                 key={p} 

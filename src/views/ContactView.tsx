@@ -57,7 +57,7 @@ export const ContactView = () => (
                 </div>
                 <div>
                   <p className="text-xs font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Email Address</p>
-                  <p className="text-2xl font-black text-slate-900">admin@arkanj.tech</p>
+                  <p className="text-2xl font-black text-slate-900">superadmin@arkanj.tech</p>
                 </div>
               </motion.div>
               <motion.div 
