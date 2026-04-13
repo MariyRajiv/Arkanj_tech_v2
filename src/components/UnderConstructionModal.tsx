@@ -31,6 +31,7 @@ export const UnderConstructionModal: React.FC<UnderConstructionModalProps> = ({ 
             {/* Close Button */}
             <button
               onClick={onClose}
+              aria-label="Close modal"
               className="absolute top-4 right-4 z-10 p-1.5 glass hover:bg-white rounded-full text-slate-400 hover:text-slate-900 transition-all shadow-sm border-white/40"
             >
               <X className="w-5 h-5" />
@@ -53,9 +54,12 @@ export const UnderConstructionModal: React.FC<UnderConstructionModalProps> = ({ 
                 <div className="relative rounded-[32px] overflow-hidden border-4 border-white shadow-xl aspect-video bg-slate-100">
                   <img 
                     src="https://set-painting.com/ART1/MGALLERY/ANIMATION/ANIAssets/Under_Movie_Opt1.gif" 
-                    alt="Under Construction" 
+                    alt="Under Construction Animation" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    width="384"
+                    height="216"
+                    loading="lazy"
                   />
                 </div>
                 

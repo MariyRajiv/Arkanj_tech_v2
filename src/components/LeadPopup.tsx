@@ -71,6 +71,7 @@ export const LeadPopup = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   onClick={handleClose}
+                  aria-label="Close popup"
                   className="absolute top-4 right-4 z-10 p-2 glass hover:bg-white rounded-full text-slate-400 hover:text-slate-900 transition-all shadow-sm border-white/40"
                 >
                   <X className="w-6 h-6" />
@@ -172,9 +173,12 @@ export const LeadPopup = () => {
                   >
                     <img 
                       src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" 
-                      alt="Consultation" 
+                      alt="Consultation Session" 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      width="144"
+                      height="192"
+                      loading="lazy"
                     />
                   </motion.div>
                   <motion.div 
@@ -198,13 +202,17 @@ export const LeadPopup = () => {
                     { label: 'Download on the', store: 'App Store' },
                     { label: 'Get it on', store: 'Google Play' }
                   ].map((badge, i) => (
-                    <div key={i} className="w-full h-10 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center px-4 gap-2 cursor-pointer transition-all border border-white/10">
+                    <button 
+                      key={i} 
+                      aria-label={`${badge.label} ${badge.store}`}
+                      className="w-full h-10 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center px-4 gap-2 cursor-pointer transition-all border border-white/10"
+                    >
                       <div className="w-4 h-4 bg-white rounded-full" />
                       <div className="flex flex-col items-start leading-none">
                         <span className="text-[6px] text-white/60 uppercase font-black tracking-widest">{badge.label}</span>
                         <span className="text-xs text-white font-black">{badge.store}</span>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>

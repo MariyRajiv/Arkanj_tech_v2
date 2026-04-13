@@ -36,11 +36,11 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
             >
               
               
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] mb-6 tracking-tighter">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] mb-6 tracking-tighter">
                 <span className="inline-block pt-6">Communicative,</span> <br />
                 <span className="text-gradient">Live Online</span> <br />
                 German Classes.
-              </h2>
+              </h1>
               <p className="text-xl md:text-2xl text-slate-500 mb-10 max-w-xl leading-relaxed font-medium">
                 Master German in just 1 hour a day. Meet our expert teachers and see why thousands of professionals choose Arkanj to bridge their career gap.
               </p>
@@ -84,22 +84,27 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
               </div>
 
               <div 
-                className="relative z-10 rounded-[40px] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border-[8px] border-white cursor-pointer group w-full aspect-video max-w-[640px]"
+                className="relative z-10 rounded-[40px] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border-[8px] border-white cursor-pointer group w-full aspect-video max-w-[640px] bg-slate-100"
                 onClick={() => setIsVideoOpen(true)}
               >
-                {/* Inline Video Player */}
+                {/* Lazy Loaded Video Thumbnail */}
                 <div className="absolute inset-0 w-full h-full">
-                  <iframe 
-                    className="w-full h-full pointer-events-none scale-105"
-                    src="https://www.youtube.com/embed/mNX1wpIQ4Uk?autoplay=1&mute=1&controls=0&loop=1&playlist=mNX1wpIQ4Uk&modestbranding=1&rel=0"
-                    title="ARKANJ Preview"
-                    frameBorder="0"
-                    allow="autoplay"
-                  ></iframe>
+                  <img 
+                    src="https://img.youtube.com/vi/mNX1wpIQ4Uk/maxresdefault.jpg" 
+                    alt="Arkanj Preview Thumbnail" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    width="640"
+                    height="360"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-blue-600 border-b-[12px] border-b-transparent ml-2" />
+                    </div>
+                  </div>
                 </div>
                 
-                {/* Clean Overlay (No Play Button) */}
-                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-all duration-500 z-20" />
+                {/* Clean Overlay */}
+                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-all duration-500 z-20" />
               </div>
               
               {/* Decorative elements around video */}
@@ -161,7 +166,14 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                    <img src={`https://picsum.photos/seed/user${i}/32/32`} alt="User" referrerPolicy="no-referrer" />
+                    <img 
+                      src={`https://picsum.photos/seed/user${i}/32/32`} 
+                      alt="User Avatar" 
+                      referrerPolicy="no-referrer" 
+                      loading="lazy"
+                      width="24"
+                      height="24"
+                    />
                   </div>
                 ))}
               </div>
@@ -175,9 +187,12 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 <div key={p.name} className="h-10 md:h-12 flex items-center justify-center group transition-transform hover:scale-110">
                   <img 
                     src={p.logo} 
-                    alt={p.name} 
+                    alt={`${p.name} logo`} 
                     className="h-full w-auto object-contain"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width="120"
+                    height="48"
                   />
                 </div>
               ))}
@@ -281,7 +296,14 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 viewport={{ once: true }}
                 className="rounded-[60px] overflow-hidden shadow-2xl relative"
               >
-                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="Germany" className="w-full aspect-[4/5] object-cover" />
+                <img 
+                  src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" 
+                  alt="Scenic view of Germany" 
+                  className="w-full aspect-[4/5] object-cover" 
+                  loading="lazy"
+                  width="800"
+                  height="1000"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
               </motion.div>
               <motion.div 
@@ -359,7 +381,14 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 className="group cursor-pointer text-left p-6 rounded-[50px] hover:bg-slate-50 transition-all duration-500"
               >
                 <div className="rounded-[40px] overflow-hidden mb-8 aspect-video relative shadow-lg">
-                  <img src={m.img} alt={m.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img 
+                    src={m.img} 
+                    alt={m.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    loading="lazy"
+                    width="600"
+                    height="338"
+                  />
                   <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-all" />
                 </div>
                 <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">{m.title}</h3>

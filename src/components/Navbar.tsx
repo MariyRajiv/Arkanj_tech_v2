@@ -20,7 +20,14 @@ export const Navbar = ({ currentPage, setPage }: { currentPage: Page, setPage: (
         <div className={`flex justify-between items-center px-6 py-3 rounded-[32px] transition-all duration-500 ${scrolled ? 'glass shadow-lg border-white/60' : 'bg-transparent'}`}>
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setPage('home')}>
             <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-              <img src="/l2.png" alt="Arkanj Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img 
+                src="/l2.png" 
+                alt="Arkanj Logo" 
+                className="w-full h-full object-cover" 
+                referrerPolicy="no-referrer" 
+                width="64"
+                height="64"
+              />
             </div>
           </div>
 
@@ -40,7 +47,11 @@ export const Navbar = ({ currentPage, setPage }: { currentPage: Page, setPage: (
             </Button>
           </div>
 
-          <button className="md:hidden p-2 text-slate-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            className="md:hidden p-2 text-slate-900" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
