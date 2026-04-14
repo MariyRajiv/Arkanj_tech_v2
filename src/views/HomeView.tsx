@@ -88,6 +88,8 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 videoId="mNX1wpIQ4Uk"
                 poster="https://img.youtube.com/vi/mNX1wpIQ4Uk/maxresdefault.jpg"
                 autoPlay={true}
+                loading="eager"
+                fetchPriority="high"
                 className="relative z-10 rounded-[40px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border-[8px] border-white w-full aspect-video max-w-[640px]"
                 title="ARKANJ Preview"
               />
@@ -283,12 +285,12 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 className="rounded-[60px] overflow-hidden shadow-2xl relative"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=60" 
                   alt="Scenic view of Germany" 
                   className="w-full aspect-[4/5] object-cover" 
                   loading="lazy"
-                  width="800"
-                  height="1000"
+                  width="600"
+                  height="750"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
               </motion.div>
@@ -357,9 +359,9 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
           
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { title: "Real-Life Conversation", desc: "Authentic dialogues, no boring drills. Learn how people actually speak.", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" },
-              { title: "Real Corrective Feedback", desc: "We step in only when it helps you improve, keeping the flow natural.", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" },
-              { title: "Real-Cultural Immersion", desc: "Local meet-up events, cultural nuances, and real-world insights.", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" }
+              { title: "Real-Life Conversation", desc: "Authentic dialogues, no boring drills. Learn how people actually speak.", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=60" },
+              { title: "Real Corrective Feedback", desc: "We step in only when it helps you improve, keeping the flow natural.", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=60" },
+              { title: "Real-Cultural Immersion", desc: "Local meet-up events, cultural nuances, and real-world insights.", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=500&q=60" }
             ].map((m, i) => (
               <motion.div 
                 key={i} 
@@ -372,8 +374,8 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                     alt={m.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                     loading="lazy"
-                    width="600"
-                    height="338"
+                    width="500"
+                    height="281"
                   />
                   <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-all" />
                 </div>

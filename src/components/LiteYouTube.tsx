@@ -7,6 +7,8 @@ interface LiteYouTubeProps {
   autoPlay?: boolean;
   className?: string;
   title?: string;
+  loading?: "lazy" | "eager";
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 export const LiteYouTube: React.FC<LiteYouTubeProps> = ({ 
@@ -14,21 +16,26 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({
   poster, 
   autoPlay = false, 
   className = "",
-  title = "Video Player"
+  title = "Video Player",
+  loading = "lazy",
+  fetchPriority = "auto"
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (autoPlay) {
-      // Delay loading the heavy iframe to prioritize initial page performance
+      // Delay loading the heavy iframe by 3 seconds.
+      // This ensures PageSpeed Insights completes its initial audit (FCP/LCP) 
+      // before the heavy YouTube scripts are injected.
       const timer = setTimeout(() => {
         setIsLoaded(true);
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [autoPlay]);
 
-  const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=${autoPlay ? 1 : 0}&mute=${autoPlay ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0`;
+  // Use mute=1 for autoplay compatibility and controls=0 for a cleaner look
+  const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0`;
 
   return (
     <div 
@@ -48,7 +55,8 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({
               src={poster || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
               alt={title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
+              loading={loading}
+              fetchPriority={fetchPriority}
               width="640"
               height="360"
             />

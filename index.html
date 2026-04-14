@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arkanj | Live Online German Classes & AI Solutions</title>
-
+    <title>Arkanj | Live Online German Classes</title>
     <meta name="description" content="Master German in just 1 hour a day with Arkanj. Communicative, live online classes for professionals. Explore our AI and automation solutions." />
     
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="https://img.youtube.com/vi/mNX1wpIQ4Uk/maxresdefault.jpg" fetchpriority="high">
+    
     <!-- Preconnect to external origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://picsum.photos">
+
+    <!-- Non-blocking CSS -->
+    <link rel="preload" href="/src/index.css" as="style">
+    <link rel="stylesheet" href="/src/index.css" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>
