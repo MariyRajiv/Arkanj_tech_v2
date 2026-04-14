@@ -5,6 +5,7 @@ import { Button } from '../components/Button';
 // import { BookingModal } from '../components/BookingModal';
 import { UnderConstructionModal } from '../components/UnderConstructionModal';
 import { Counter } from '../components/Counter';
+import { LiteYouTube } from '../components/LiteYouTube';
 import { stats, partners, testimonials, industryServices, faqs } from '../constants';
 import { Page } from '../types';
 
@@ -83,29 +84,13 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 Top Rated Language & Tech Platform
               </div>
 
-              <div 
-                className="relative z-10 rounded-[40px] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border-[8px] border-white cursor-pointer group w-full aspect-video max-w-[640px] bg-slate-100"
-                onClick={() => setIsVideoOpen(true)}
-              >
-                {/* Lazy Loaded Video Thumbnail */}
-                <div className="absolute inset-0 w-full h-full">
-                  <img 
-                    src="https://img.youtube.com/vi/mNX1wpIQ4Uk/maxresdefault.jpg" 
-                    alt="Arkanj Preview Thumbnail" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    width="640"
-                    height="360"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-blue-600 border-b-[12px] border-b-transparent ml-2" />
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Clean Overlay */}
-                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-all duration-500 z-20" />
-              </div>
+              <LiteYouTube 
+                videoId="mNX1wpIQ4Uk"
+                poster="https://img.youtube.com/vi/mNX1wpIQ4Uk/maxresdefault.jpg"
+                autoPlay={true}
+                className="relative z-10 rounded-[40px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border-[8px] border-white w-full aspect-video max-w-[640px]"
+                title="ARKANJ Preview"
+              />
               
               {/* Decorative elements around video */}
               <div className="absolute -top-8 -right-8 w-32 h-32 bg-blue-400/20 rounded-full blur-2xl" />
@@ -146,11 +131,12 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
                 </button>
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/mNX1wpIQ4Uk?autoplay=1&mute=0&rel=0&modestbranding=1"
+                  src="https://www.youtube-nocookie.com/embed/mNX1wpIQ4Uk?autoplay=1&mute=0&rel=0&modestbranding=1"
                   title="ARKANJ Intro"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  loading="lazy"
                 ></iframe>
               </motion.div>
             </motion.div>
