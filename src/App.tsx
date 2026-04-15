@@ -20,7 +20,7 @@ export default function App() {
   }, [currentPage]);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-blue-600 selection:text-white bg-white">
+    <div className="min-h-[100dvh] flex flex-col font-sans selection:bg-blue-600 selection:text-white bg-white overflow-x-hidden">
       <LeadPopup />
       <Navbar currentPage={currentPage} setPage={setPage} />
       

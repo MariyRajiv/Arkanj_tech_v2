@@ -19,14 +19,14 @@ export const Navbar = ({ currentPage, setPage }: { currentPage: Page, setPage: (
       <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? 'scale-100' : 'scale-100'}`}>
         <div className={`flex justify-between items-center px-6 py-3 rounded-[32px] transition-all duration-500 ${scrolled ? 'glass shadow-lg border-white/60' : 'bg-transparent'}`}>
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setPage('home')}>
-            <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+            <div className="w-20 h-20 md:w-40 md:h-10 transition-all duration-500 group-hover:scale-110">
               <img 
-                src="/l2.png" 
+                src="/Final Logo.png" 
                 alt="Arkanj Logo" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full object-contain filter drop-shadow-md" 
                 referrerPolicy="no-referrer" 
-                width="64"
-                height="64"
+                width="96"
+                height="96"
               />
             </div>
           </div>

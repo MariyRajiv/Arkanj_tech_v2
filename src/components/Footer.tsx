@@ -11,15 +11,15 @@ export const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
       <div className="grid md:grid-cols-4 gap-16 mb-24">
         <div className="col-span-1 md:col-span-1 text-left">
           <div className="flex items-center gap-3 mb-10 cursor-pointer group" onClick={() => setPage('home')}>
-            <div className="w-20 h-20 md:w-24 md:h-24 rounded-[32px] overflow-hidden group-hover:rotate-12 transition-transform duration-500 shadow-2xl">
+            <div className="w-28 h-28 md:w-60 md:h-20 transition-all duration-500 group-hover:scale-110">
               <img 
-                src="/l2.png" 
+                src="/Final Logo.png" 
                 alt="Arkanj Logo" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full object-contain filter drop-shadow-lg" 
                 referrerPolicy="no-referrer" 
                 loading="lazy"
-                width="96"
-                height="96"
+                width="128"
+                height="128"
               />
             </div>
           </div>

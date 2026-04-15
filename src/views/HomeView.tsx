@@ -37,8 +37,8 @@ export const HomeView = ({ setPage }: { setPage: (p: Page) => void }) => {
             >
               
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] mb-6 tracking-tighter">
-                <span className="inline-block pt-6">Communicative,</span> <br />
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-800 leading-[0.95] mb-2 tracking-tighter">
+                <span className="inline-block pt-7">Communicative,</span> <br />
                 <span className="text-gradient">Live Online</span> <br />
                 German Classes.
               </h1>
